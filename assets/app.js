@@ -6,6 +6,7 @@ var count = 0;
 var onLoadImg = function() {
   if ( ++count === n ) {
     new Masonry(document.body, { itemSelector: '.item' });
+    document.body.className = '';
   }
 };
 
