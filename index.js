@@ -71,3 +71,5 @@ var Kosaki = (function () {
 })();
 
 exports.default = Kosaki;
+
+module.exports = exports.default;

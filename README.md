@@ -15,3 +15,8 @@ kosaki.onReady(function() {
   var all_images = kosaki.get();
 });
 ```
+
+## Use at Hubot script
+``` coffee
+require 'kosaki'
+```

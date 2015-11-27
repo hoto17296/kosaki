@@ -37,3 +37,4 @@ class Kosaki {
 }
 
 export default Kosaki
+module.exports = exports.default
