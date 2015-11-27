@@ -22,6 +22,7 @@ var Kosaki = (function () {
 
     this._api_base = api_base || API_BASE_DEFAULT;
     this._images = null;
+    this._cb = [];
     this._load(path);
   }
 
@@ -36,14 +37,34 @@ var Kosaki = (function () {
           return console.error(err);
         }
         _this._images = JSON.parse(body);
+        _this._cb.map(function (cb) {
+          return cb();
+        });
       });
     }
   }, {
     key: 'random',
-    value: function random(opts) {}
+    value: function random(opts) {
+      var images = this.get(opts);
+      return images.length > 0 ? images[Math.floor(Math.random() * images.length)] : null;
+    }
   }, {
     key: 'get',
-    value: function get(opts) {}
+    value: function get(opts) {
+      var _this2 = this;
+
+      if (!this._images) {
+        return [];
+      }
+      return this._images.general.map(function (image) {
+        return _this2._api_base + '/images/' + image.name;
+      });
+    }
+  }, {
+    key: 'onReady',
+    value: function onReady(cb) {
+      this._images === null ? this._cb.push(cb) : cb();
+    }
   }]);
 
   return Kosaki;
