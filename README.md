@@ -19,7 +19,7 @@ kosaki.onReady(function() {
 });
 ```
 
-## Use at Hubot script
+## Example for hubot script
 ``` coffee
 Kosaki = require 'kosaki'
 kosaki = new Kosaki()
