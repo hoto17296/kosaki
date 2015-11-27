@@ -11,9 +11,9 @@ function onLoadImg() {
 function fetchImages(images) {
   var div, img;
   count = images.length;
-  images.shuffle().map(function(name) {
+  images.shuffle().map(function(image) {
     img = document.createElement('img');
-    img.src = './images/' + name;
+    img.src = './images/' + image.name;
     img.className = 'item';
     img.onload = onLoadImg;
     img.onerror = onLoadImg;
