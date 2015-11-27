@@ -18,5 +18,11 @@ kosaki.onReady(function() {
 
 ## Use at Hubot script
 ``` coffee
-require 'kosaki'
+Kosaki = require 'kosaki'
+kosaki = new Kosaki()
+
+module.exports = (robot) ->
+
+  robot.hear /(小野寺|小咲)/, (msg) ->
+    msg.send kosaki.random()
 ```
