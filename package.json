@@ -1,0 +1,22 @@
+{
+  "name": "kosaki",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "babel src/index.js --out-file index.js --watch",
+    "build": "babel src/index.js --out-file index.js",
+    "test": "mocha --compilers js:babel-core/register"
+  },
+  "dependencies": {
+    "request": "*"
+  },
+  "devDependencies": {
+    "assert": "*",
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-es2015": "*",
+    "mocha": "*"
+  }
+}
